@@ -1,0 +1,15 @@
+reset;
+reset;
+
+model Example.09.02.HT.mod;
+
+option solver './cplex';
+solve;
+
+
+print '                    ';
+print 'The Distribution of Camels:';
+display X;
+print '                    ';
+printf 'The Total Number of Camel in the Herd: %i\n', Y;
+print '                    ';

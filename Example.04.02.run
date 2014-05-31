@@ -1,0 +1,26 @@
+##Run file for Example 4.02 (Ronald Rardin)
+
+reset;
+
+#Define the model file
+model Example.04.02.mod;
+
+#Define the data file
+data Example.04.02.dat;
+
+#Set the solver
+option solver './minos';
+
+#Solve the model
+solve;
+
+
+#Display the result
+printf '                                     \n';
+printf 'The optimal solutions are:\n'; display X;
+printf 'The optimal value is: %8.2f\n',totalCost;
+printf '                                     \n';
+display D;
+
+
+#reset;

@@ -1,0 +1,45 @@
+reset;
+reset;
+#model Class_AMPL_Models\CFPL\cfpl.mod;
+#data Class_AMPL_Models\CFPL\cfpl.dat;
+
+model cfpl.mod;
+data cfpl.dat;
+option show_stats 1;
+option solution_round 1;
+option solver './gurobi';
+solve;
+
+#Print Results (Results are printed in cfpl.sol)
+
+printf"Maximum Margin:\n">Class_AMPL_Models\CFPL\cfpl.sol;
+print Margin>Class_AMPL_Models\CFPL\cfpl.sol;
+
+printf"\nLogs Bought per month (w) (Quality Q - Vendor V - Thikness T):\n">Class_AMPL_Models\CFPL\cfpl.sol; 
+for{q in Q, v in V, t in T}{
+if w[q,v,t]>0 then{
+print 'Q' & '('&q&')' & ' - ' & 'V' & '('&v&')' & ' - ' & 'T' & '('&t&')' & ' = ', w[q,v,t]>Class_AMPL_Models\CFPL\cfpl.sol;
+}
+}
+
+printf"\nVeneer Purchased per month (x) (Thikness T - Grade G):\n">Class_AMPL_Models\CFPL\cfpl.sol; 
+for{t in T, g in G}{
+if x[t,g]>0 then{ 
+print 'T' & '('&t&')' & ' - ' & 'G' & '('&g&')' & ' =', x[t,g]>Class_AMPL_Models\CFPL\cfpl.sol;
+}
+}
+
+
+printf"\nSheets used in process (y) (Thikness T - Grade1 G1 - Grade2 G2):\n">Class_AMPL_Models\CFPL\cfpl.sol; 
+for{t in T, g in G, k in GP}{
+if y[t,g,k]>0 then{
+print 'T' & '('&t&')' & ' - ' & 'G1' & '('&g&')' & ' - ' & 'G2' & '('&k&')' & ' =', y[t,g,k]>Class_AMPL_Models\CFPL\cfpl.sol;
+}
+}
+
+printf"\nVeneer  sheets sold per month (z) (Thikness U - Product P):\n">Class_AMPL_Models\CFPL\cfpl.sol; 
+for{u in U, p in P}{
+if z[u,p]>0 then{
+print 'U' & '('&u&')' & ' - ' & 'P' & '('&p&')' & ' =', z[u,p]>Class_AMPL_Models\CFPL\cfpl.sol;
+}
+}

@@ -1,0 +1,42 @@
+reset;
+reset;
+
+model portfolio_Growth.mod;
+data  portfolio_RiskReward.dat;
+
+
+option solver cplex;
+solve;
+
+
+option display_eps 0.0001;
+option display_precision 8;
+option print_precision 8;
+option output_precision 8;
+#option omit_zero_rows 1;
+
+printf '                  \n';
+#printf 'Allocated assets: \n';
+#display x;
+#printf 'Objctive function: \n'; display lin_comb;
+#printf '                  \n';
+
+
+
+let {j in A} x[j] := 1/card(A);
+solve;
+
+display Corr;
+
+printf: "-------------------------------------------------------------------\n";
+printf: "                                      Asset       Mean    Variance \n";
+printf {j in A}: "%45s %10.8f %10.8f \n", 
+    j, mean[j], sum{i in T} Rtilde[i,j]^2 / card(T);
+
+printf: "\n";
+printf: "Optimal Portfolio:                    Asset       Fraction \n";
+printf {j in A: x[j] > 0.001}: "%45s %10.8f \n", j, x[j];
+
+printf: "Mean = %10.8f, Variance = %10.6f \n",
+    sum{j in A} mean[j]*x[j],
+    sum{i in T} (sum{j in A} Rtilde[i,j]*x[j])^2 / card(T);

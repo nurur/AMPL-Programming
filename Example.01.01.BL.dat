@@ -1,0 +1,30 @@
+
+set crops := 1 2 3;
+set purch := 1 2 3;
+set sell  := 1 2 3 4;
+
+param TotalArea := 500;
+
+param plantCost := 
+1  150
+2  230
+3  260;
+
+param purchaseCost := 
+1 238
+2 210
+3   0;
+
+
+param sellCost :=
+1  170 
+2  150
+3   36
+4   10;
+
+param yield := 
+1  2.5
+2  3.0
+3 20.0;
+
+ 

@@ -1,0 +1,11 @@
+reset;
+reset;
+
+model solution.2.mod;
+data  solution.2.dat;
+option solver cplex;
+solve;
+
+display X;
+display Y;
+display purchaseCost; 

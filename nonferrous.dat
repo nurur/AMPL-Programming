@@ -1,0 +1,14 @@
+set METAL := M1 M2; 
+set ALLOY := A1 A2 A3 A4; 
+
+param avail := M1 25 
+               M2 40; 
+
+param portion : A1 A2 A3 A4 := 
+             M1 0.5 0.6 0.3 0.1 
+             M2 0.5 0.4 0.7 0.9; 
+
+param price := A1 750 
+               A2 650 
+               A3 1200 
+               A4 2200;

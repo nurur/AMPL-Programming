@@ -1,0 +1,24 @@
+##Run file for Example 4.08 (Ronald Rardin)
+
+reset;
+
+#Define the model file
+model Example.4.08.mod;
+
+
+#Define the data file
+data Example.4.08.dat;
+
+
+#Set the solver
+option solver './minos';
+
+
+#Solve the model
+solve;
+
+
+#Display the result
+display Sp, Sm;
+display X;
+display Y;

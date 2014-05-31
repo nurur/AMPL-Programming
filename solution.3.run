@@ -1,0 +1,10 @@
+reset;
+reset;
+
+model solution.3.mod;
+data  solution.3.dat;
+option solver cplex;
+solve;
+
+display X;
+display Objective; 

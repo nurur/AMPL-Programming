@@ -1,0 +1,31 @@
+##Data file for Assignment 4 (Problem 4.22)
+
+#Total number of Elementary Components 
+set S := 1 2 3 4 5;
+
+
+#The number of Quarters (of a year)
+set Q := 1 2 3 4;
+
+
+
+#Demand of finished Units in each quarter  
+param D := 1  500
+           2 1200 
+           3 1000
+           4  300;
+
+
+#Value of each Component (in Dollar) 
+param V := 1  120
+           2   40
+           3   75
+           4  400
+           5  700;
+
+#Time to assemble each Component (in Hour) 
+param T := 1  0.06
+           2  0.07
+           3  0.04
+           4  0.12
+           5  0.32;

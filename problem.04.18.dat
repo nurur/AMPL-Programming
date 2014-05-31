@@ -1,0 +1,8 @@
+##Data file for Assignment 2 (Problem 4.18)
+
+set S := 1 2 3;
+
+param C :=
+1 5
+2 10
+3 25;

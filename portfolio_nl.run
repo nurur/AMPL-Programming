@@ -1,0 +1,18 @@
+reset;
+reset;
+
+
+model port.mod;
+data  port.dat;
+
+option solver knitro;
+#option solver conopt;
+solve;
+
+printf('                     \n');
+printf('Printing stock values:\n');
+display x;
+
+printf('Printing minimum variance:\n');
+display variance;
+

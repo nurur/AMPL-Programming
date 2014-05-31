@@ -1,0 +1,12 @@
+reset;
+reset;
+
+model multicommodity1.mod;
+data multicommodity1.dat;
+
+#option solver gurobi;
+option solver cplex;
+solve;
+
+display Use;
+

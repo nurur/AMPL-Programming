@@ -1,0 +1,26 @@
+reset;
+reset;
+
+
+model Example.randomProg.mod;
+option solver cplex;
+solve;
+
+
+display objFun;
+display X, Y;
+display cond1.lb, cond2.lb;
+
+
+
+#set POOL ordered default 1..30;
+#set INDEX := 1..15;
+#param choice {INDEX};
+#for {i in INDEX} 
+#{
+#  let choice[i] := member(ceil(Uniform(0, card(POOL))), POOL);
+#  let POOL := POOL diff {choice[i]};  
+#}
+#display choice;
+
+

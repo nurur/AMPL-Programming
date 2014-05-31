@@ -1,0 +1,23 @@
+##Run file for Sample Example 4.10
+
+reset;
+
+#Define the model file
+model sampleExample.4.10.mod;
+
+
+#Define the data file
+data sampleExample.4.10.dat;
+
+
+#Set the solver
+option solver './minos';
+
+
+#Solve the model
+solve;
+
+
+#Display the result
+display Sp, Sm;
+display X;

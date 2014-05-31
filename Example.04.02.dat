@@ -1,0 +1,66 @@
+##Data file for Example 4.02 (Ronald Rardin)
+
+#Number of Ingredients
+#set S := 1 2 3 4 5 6 7;
+set S := scrap1 scrap2 scrap3 scrap4 nickel chromium molybdenum; 
+
+
+#Number of Constraints 
+set P := 1 2 3 4;
+
+
+#Objective Function Coefficient
+#param C :=
+#1   16.0
+#2   10.0
+#3    8.0
+#4    9.0
+#5   48.0
+#6   60.0
+#7   53.0;
+param C :=
+scrap1      16
+scrap2      10
+scrap3       8
+scrap4       9
+nickel      48
+chromium    60
+molybdenum  53;
+
+
+#Availability
+param A :=
+scrap1       75.
+scrap2      250.
+scrap3     1.E20
+scrap4     1.E20
+nickel     1.E20
+chromium   1.E20
+molybdenum 1.E20;
+
+
+#Constarints 
+#Four Diffrent Constarints for all Seven ingredients
+#param D : 1     2     3      4      5    6    7  := 
+param D : scrap1 scrap2 scrap3 scrap4 nickel chromium molybdenum :=
+1         0.008 0.007 0.0085 0.0040 0.0  0.0  0.0 
+2         0.180 0.032 0.0000 0.0000 1.0  0.0  0.0 
+3         0.120 0.011 0.0000 0.0000 0.0  1.0  0.0  
+4         0.000 0.001 0.0000 0.0000 0.0  0.0  1.0;
+
+
+#Right Hand Side limit (Less than or equal to)
+param RL :=
+1   6.5 
+2  30.0
+3  10.0
+4  11.0;
+
+
+#Right Hand Side limit (Greater than or equal to)
+param RG :=
+1   7.5 
+2  35.0
+3  12.0
+4  13.0;
+

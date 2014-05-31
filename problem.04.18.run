@@ -1,0 +1,23 @@
+##Run file for Assignment 2 (Problem 4.18)
+
+reset;
+
+#Define the model file
+model problem.4.18.mod;
+
+
+#Define the data file
+data problem.4.18.dat;
+
+
+#Set the solver
+option solver cplex;
+
+
+#Solve the model
+solve;
+
+
+#Display the result
+display Wp, Wm;
+display X;

@@ -1,0 +1,18 @@
+set FOODS     := bread, beef, fruit;
+set NUTRIENTS := vitaminA, vitaminB, proteins;
+
+param cost :=
+bread 1
+beef  6
+fruit 0.6;
+
+param amount: bread beef fruit :=
+vitaminA 3 2 5
+vitaminB 0 1 4
+proteins 1 6 0;
+
+
+param minimum :=
+vitaminA 30
+vitaminB 15
+proteins 25;

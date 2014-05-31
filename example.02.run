@@ -1,0 +1,23 @@
+##Run window for Example 02
+
+reset;
+
+#Define the model file
+model example.02.mod;
+
+
+#Define the data file
+data example.02.dat;
+
+
+#Set the solver
+option solver './gurobi';
+
+
+#Solve the model
+solve;
+
+
+#Display the result
+display maintenance;
+display reliability;

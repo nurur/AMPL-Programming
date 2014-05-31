@@ -1,0 +1,14 @@
+reset;
+reset;
+
+
+model Example.01.01.BL.mod;
+data  Example.01.01.BL.dat;
+
+option solver cplex;
+solve;
+
+display profit;
+display X;
+display Y;
+display W;

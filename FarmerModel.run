@@ -1,0 +1,42 @@
+reset;
+reset;
+
+
+model FarmerModel.mod;
+
+
+#table Corn IN "ODBC" "FarmerDataDet.xls": C <- [C], PlantingCost, SalePrice, MaxAtGoodPrice, LowSalePrice, PurchasePrice, MinReq;
+#table Probability IN "ODBC" "FarmerDataDet.xls": S <- [S], p;
+#table YieldDet IN "ODBC" "FarmerDataDet.xls": [C], Yield;
+#table Total IN "ODBC" "FarmerDataDet.xls":  [ ], TotalAcres;
+
+
+table Corn IN "tableproxy" "odbc ""FarmerDataDet.xls": C <- [C], PlantingCost, SalePrice, MaxAtGoodPrice, LowSalePrice, PurchasePrice, MinReq;
+table YieldDet IN "tableproxy" "odbc" "FarmerDataDet.xls": [C], Yield;
+table Total IN "tableproxy" "odbc" "FarmerDataDet.xls":  [ ], TotalAcres;
+
+
+read table Corn;
+#read table Probability;
+read table YieldDet;
+read table Total;
+
+table SolX OUT "tableproxy" "odbc" "FarmerDataDet.xls": [C], x;
+table SolW OUT "tableproxy" "odbc" "FarmerDataDet.xls": [C], w;
+table SolE OUT "tableproxy" "odbc" "FarmerDataDet.xls": [C], e;
+table SolY OUT "tableproxy" "odbc" "FarmerDataDet.xls": [C], y;
+
+option solver cplex;
+solve;
+
+write table SolX;
+write table SolW;
+write table SolE;
+write table SolY;
+
+option display_precision 0;
+#display x > fts2.xls;
+#display x;
+#display y;
+#display w;
+#display e;

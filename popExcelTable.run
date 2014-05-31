@@ -1,0 +1,42 @@
+reset;
+reset;
+
+
+model popExcelTable.mod;
+option solver './gurobi';
+solve;
+
+
+display X;
+
+
+
+#Create the Table 
+#
+table popExcelTable OUT "tableproxy" "odbc" "popExcelTable.xlsx": [popExcelTable],
+{i in 1..N} X[i,1] ~ A,
+{i in 1..N} X[i,2] ~ B,
+{i in 1..N} X[i,3] ~ C,
+{i in 1..N} X[i,4] ~ D,
+{i in 1..N} X[i,5] ~ E,
+{i in 1..N} X[i,6] ~ F,
+{i in 1..N} X[i,7] ~ G,
+{i in 1..N} X[i,8] ~ H,
+{i in 1..N} X[i,9] ~ I;
+#
+#Fill the Table 
+write table popExcelTable;
+shell "ren popExcelTable.xlsx popExcelTable.xls";
+
+
+#table popExcelTable OUT "tableproxy" "odbc" ("popExcelTable.xlsx"): [popExcelTable],
+#table popExcelTable OUT "tableproxy" "ODBC" ("popExcelTable.xlsx"): [popExcelTable],
+#table popExcelTable OUT "tableproxy" "hname=odbc" "ODBC" "popExcelTable.xlsx": [popExcelTable],
+
+
+#include popExcelTable.run;
+#option ampl_libpath '/Users/nurur/ampl64';
+#display _HANDLERS;
+#print _handler_desc['odbc'];
+#print _handler_desc['tableproxy'];
+

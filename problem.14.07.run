@@ -1,0 +1,14 @@
+reset;
+reset;
+
+model problem.14.07.mod;
+data  problem.14.07.dat;
+
+option solver knitro;
+options knitro_options ms_enable; 
+solve;
+
+
+display xS;
+display yS;
+display W;

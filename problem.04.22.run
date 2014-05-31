@@ -1,0 +1,35 @@
+##Run file for Assignment 4 (Problem 4.22)
+
+reset;
+
+#Define the model file
+model problem.4.22.mod;
+
+
+#Define the data file
+data problem.4.22.dat;
+
+
+#Set the solver
+option solver cplex;
+
+
+#Solve the model
+solve;
+
+
+#Display the result
+printf"---------------------------------\n\n" >> "problem.4.22.sol";
+printf"The total holding cost (in dollars): " >> "problem.4.22.sol";
+display holdingCost >> "problem.4.22.sol";
+printf"--------------------------------\n\n" >> "problem.4.22.sol";
+
+
+printf"Number of units of elements j produced in quarter q, X[q,j]: \n" 
+>> "problem.4.22.sol";
+display X  >> "problem.4.22.sol";
+printf"--------------------------------\n\n" >> "problem.4.22.sol";
+
+
+printf"Number of units of elements j held in inventory from quarter q to the next, H[q,j]: \n" >> "problem.4.22.sol";
+display H >> "problem.4.22.sol";

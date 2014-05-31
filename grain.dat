@@ -1,0 +1,22 @@
+set GRAIN := G1 G2 G3 G4; 
+set NUTRIENT := Starch Fiber Protein Gluten; 
+
+param n_percent :
+Starch Fiber Protein Gluten := 
+G1 30 40 20 10 
+G2 20 65 15  0 
+G3 40 35  5 20
+G4 25 40 30  5;
+
+param cost := 
+G1 70 G2 40 G3 60 G4 80; 
+
+param u_grain := 
+G1 25 G2 20 G3 100 G4 100; 
+param l_grain := 
+G1 10 G2  0 G3 30 G4 0; 
+
+param u_nutrient := 
+Starch 100 Fiber 50 Protein 100	Gluten 13; 
+param l_nutrient := 
+Starch 0 Fiber 0 Protein 18 Gluten 8 ;

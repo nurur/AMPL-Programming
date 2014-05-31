@@ -1,0 +1,30 @@
+reset;
+reset;
+
+
+model diet1.mod; 
+data  diet1.dat; 
+
+
+#Case 1: Relaxation is performed by AMPL
+#let scale := 0.95;
+#option relax_integrality 1;     #AMPL presolve, var gets continuous 
+                                 #bound unchanged  
+#option solver './cplex';
+#solve;
+#display Buy;
+#display cost;
+
+
+
+#Cae 2: Relaxation performed by solver
+let scale := 0.95;
+option relax_integrality 0;     #AMPL presolve, var unchanged 
+                                #bound  gets togentend  
+option solver './cplex';      
+option cplex_options 'relax';   #cplex solver
+solve;
+#display Buy;
+#display cost;
+
+

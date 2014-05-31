@@ -1,0 +1,16 @@
+reset;
+reset;
+
+
+model Example.14.5.SOC.mod;
+data  Example.14.5.SOC.dat;
+
+
+option solver './cplex';
+solve;
+
+
+option display_precision 4;
+display X;
+display portfolioRisk;
+display Y;

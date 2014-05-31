@@ -1,0 +1,14 @@
+reset;
+
+model solution.1.mod;
+data  solution.1.dat;
+option solver cplex;
+solve;
+
+printf('                                       \n');
+printf('Number of representatives in districts:\n');
+display N;
+
+printf('The total cost of assigning representatives:\n');
+display repCost; 
+printf('in unit of $1000\n');

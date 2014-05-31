@@ -1,0 +1,22 @@
+##Run file for Assignment 1 (Problem 4.13)
+
+reset;
+
+#Define the model file
+model problem.4.13.mod;
+
+
+#Define the data file
+data problem.4.13.dat;
+
+
+#Set the solver
+option solver cplex;
+
+
+#Solve the model
+solve;
+
+
+#Display the result
+display X;

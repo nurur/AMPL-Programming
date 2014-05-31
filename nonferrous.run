@@ -1,0 +1,14 @@
+# Script file
+reset
+reset
+
+model nonferrous.mod;
+data  nonferrous.dat;
+
+option solver cplex;
+solve;
+
+
+display X;
+display grossRevenue;
+

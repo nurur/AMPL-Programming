@@ -1,0 +1,12 @@
+# Data window for Example 02
+
+param numBridges := 5;
+param numYears   := 8;
+
+param deteriorationRate := 5;
+
+param currentCondition := 
+1 85 
+2 753 90 
+4 95 
+5 100;

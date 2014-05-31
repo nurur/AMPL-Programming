@@ -1,0 +1,8 @@
+reset;
+reset;
+
+model diet.mod; 
+data  diet.dat; 
+
+option solver './cplex';
+solve;

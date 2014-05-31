@@ -1,0 +1,14 @@
+reset;
+reset;
+
+
+model sampleExample.14.1.mod;
+data  sampleExample.14.1.dat;
+option solver './knitro';
+solve;
+
+
+option display_precision 2;
+display X;
+display Y;
+display W;

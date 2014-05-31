@@ -1,0 +1,15 @@
+reset;
+reset;
+
+#model Class_AMPL_Models\NLP\LocationAllocation\LocAlloc.mod;
+#data Class_AMPL_Models\NLP\LocationAllocation\LocAlloc.dat;
+model LocAlloc.mod;
+data  LocAlloc.dat;
+
+option solver knitro;
+#option solver conopt;
+solve;
+
+display xdepot;
+display ydepot;
+display trips;

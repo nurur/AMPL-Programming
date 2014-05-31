@@ -1,0 +1,11 @@
+reset;
+reset;
+
+
+model sampleExample.14.2.mod;
+option solver './knitro';
+solve;
+
+
+option display_precision 2;
+display X;
