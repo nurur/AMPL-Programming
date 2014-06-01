@@ -8,5 +8,4 @@ optimization), integer programming (e.g. capital budgeting, facility location),
 and mixed-integer programming (e.g. staff assignment, constrained portfolio 
 optimization). 
 
-I learned the techniques of AMPL programming during the MS degree in 
-Business Analytics.  
+These AMPL codes are written during the MS degree in Business Analytics.  
