@@ -9,4 +9,4 @@ and mixed-integer programming (e.g. staff assignment, constrained portfolio
 optimization). 
 
 Most of these AMPL codes are written during the MS degree in Business Analytics.
-Some of the codes are borrowed directly from various authors for learning purposes. 
+Some of these codes are borrowed directly from various authors for learning purposes. 
