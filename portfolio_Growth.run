@@ -2,7 +2,7 @@ reset;
 reset;
 
 model portfolio_Growth.mod;
-data  portfolio_RiskReward.dat;
+data  portfolio_Growth.dat;
 
 
 option solver cplex;
