@@ -1,4 +1,8 @@
-## Non-linear Example: Portfolio Selection
+## Non-linear Programming Example: Portfolio Selection
+# Reference:
+# http://orfe.princeton.edu/~rvdb/ampl/nlmodels/
+# http://orfe.princeton.edu/~rvdb/ampl/nlmodels/markowitz/index.html
+
 
 ##SETS
 set I; 		# Set of Investments;
