@@ -1,3 +1,8 @@
+# Reference:
+# http://orfe.princeton.edu/~rvdb/ampl/nlmodels/
+# http://orfe.princeton.edu/~rvdb/ampl/nlmodels/markowitz/index.html
+
+
 set A;   		# asset categories
 set T := {1973..1994}; 	# number of years
 
