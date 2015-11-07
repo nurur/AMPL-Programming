@@ -2,8 +2,8 @@ reset;
 reset;
 
 
-model port.mod;
-data  port.dat;
+model portfolio_nl.mod;
+data  portfolio_nl.dat;
 
 option solver knitro;
 #option solver conopt;
